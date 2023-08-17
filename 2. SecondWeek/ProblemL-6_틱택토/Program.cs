@@ -6,7 +6,7 @@ class Program
 {
     private char[,] board = { {'1','2','3' },{'4','5','6'},{'7','8','9'} };
     int whatPlayer = 1;
-    int inputPos = 3;
+    int ConsoleTopPos = 3;
     static void Main()
     {
         Program game = new Program();
@@ -23,8 +23,8 @@ class Program
             Console.WriteLine("플레이어 1: X 와 플레이어 2: O\n");
             Console.WriteLine(strPlayerTurn);
             PrintBoard(whatPlayer);
-            Console.SetCursorPosition(strPlayerTurn.Length*2, inputPos);
-            inputPos = 3;
+            Console.SetCursorPosition(strPlayerTurn.Length*2, ConsoleTopPos);
+            ConsoleTopPos = 3;
             
             // 입력 받기
             string input;
@@ -33,7 +33,7 @@ class Program
             
             // 입력이 유효할 경우, 설정 후에 체크까지
             int num;
-            if (passInput(input,out num))
+            if (passInput(input, out num))
             {
                 num -= 1;
                 int x = num % board.GetLength(1);
@@ -41,10 +41,10 @@ class Program
                 if (board[y, x] == 'X' || board[y, x] == 'O')
                 {
                     Console.WriteLine("다시 골라주십시오");
-                    ++inputPos;
+                    ++ConsoleTopPos;
                     continue;
                 }
-                
+
                 // 해당 위치에 값 지정
                 board[y, x] = 'X';
                 if (whatPlayer == 2)
@@ -59,7 +59,7 @@ class Program
                     Console.WriteLine($"플레이어{winPlayer}가 이겼습니다");
                     break;
                 }
-                
+
                 // 플레이어 변경
                 if (whatPlayer == 1)
                     whatPlayer = 2;
@@ -68,7 +68,6 @@ class Program
                     whatPlayer = 1;
                 }
             }
-            
         }
         
         return;
@@ -130,7 +129,6 @@ class Program
         char crossTarget = board[0, 0];
         if (SetPlayer(crossTarget, out winPlayer))
         {
-           
             for (int i = 0; i < board.GetLength(0); i++)
             {
                 if (crossTarget == board[i, i])
@@ -172,7 +170,7 @@ class Program
             if (!(0 < num && num <= board.Length))
             {
                 Console.WriteLine("범위를 제대로 입력해주세요");
-                ++inputPos;
+                ++ConsoleTopPos;
                 return false;
             }
         }
