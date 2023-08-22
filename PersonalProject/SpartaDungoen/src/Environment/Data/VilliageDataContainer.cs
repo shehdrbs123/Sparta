@@ -13,7 +13,7 @@ public class VilliageDataContainer : DataReader
         int i = 0;
         int functionCount;
 
-        newVil.NameID = data[i];
+        newVil.NameId = data[i];
         i++;
 
         // 마을별 기능 리스트 추가
@@ -24,7 +24,7 @@ public class VilliageDataContainer : DataReader
         {
             newVil.FunctionIDs.Add(data[i+j]);
         }
-        _villiages.Add(newVil.NameID,newVil);
+        _villiages.Add(newVil.NameId,newVil);
     }
 
     public Villiage GetVilliage(string Key)

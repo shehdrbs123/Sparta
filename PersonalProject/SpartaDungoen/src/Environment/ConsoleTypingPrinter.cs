@@ -75,10 +75,16 @@ public class ConsoleTypingPrinter
         {
             _showList.Add(new List<string>());
         }
+        
+        TopList.Capacity = 10;
+        InfoList.Capacity = 10;
+        SelectList.Capacity = 10;
+        EndList.Capacity = 2;
     }
 
     public void Print()
     {
+        Console.Clear();
         bool isWriteAll = false;
         int paintsIdx = 0;
         foreach (var writeList in _showList)

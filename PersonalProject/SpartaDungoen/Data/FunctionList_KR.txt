@@ -1,0 +1,4 @@
+﻿CommandInVilliage|3|CommandInVilliage|CommandInStatus|CommandInInventory
+CommandInStatus|2|CommandInStatus|CommandInVilliage
+CommandInInventory|2|CommandInInventory|CommandInVilliage
+END

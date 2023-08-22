@@ -1,9 +1,8 @@
-﻿public class Villiage
+﻿public class FunctionList : IFunctions
 {
-    public string NameID{ set; get; }
     public List<string> FunctionIDs { private set; get; }
-
-    public Villiage()
+    
+    public FunctionList()
     {
         FunctionIDs = new List<string>();
     }

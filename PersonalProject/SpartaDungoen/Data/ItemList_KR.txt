@@ -1,0 +1,3 @@
+﻿OldSword|OldSwordDescription|Hand|Attack|2
+CastIronArmor|CastIronArmorDescription|Shirt|Defense|5
+END

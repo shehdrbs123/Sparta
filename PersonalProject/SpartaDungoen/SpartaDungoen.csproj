@@ -28,9 +28,21 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Content Include="Data\FunctionList_KR.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="Data\ItemList_KR.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
       <Content Include="Data\VilliageData_KR.txt">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
     </ItemGroup>
+
+    <ItemGroup>
+      <Compile Include="src\Environment\Function\CommandInInventoryEquip.cs" />
+    </ItemGroup>
+
+    
 
 </Project>

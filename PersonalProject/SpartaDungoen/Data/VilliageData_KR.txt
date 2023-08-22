@@ -1,2 +1,2 @@
-﻿Sparta|1|InVilliage|
+﻿Sparta|1|CommandInVilliage
 END

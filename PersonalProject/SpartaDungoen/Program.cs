@@ -9,6 +9,19 @@ public class Program
     }
 }
 
+public class CurrentFunctionListIds
+{
+    public List<string> FunctionListIds;
+
+    public int Count
+    {
+        get
+        {
+            return FunctionListIds.Count;
+        }
+    }
+}
+
 public class ThisisSpartaCore
 {
     private ConsoleTypingPrinter _printer;
@@ -17,22 +30,24 @@ public class ThisisSpartaCore
     private Villiage _currentVilliage;
     private Player _currentPlayer;
     private FunctionReader _functionReader;
+    private CurrentFunctionListIds _currentFunctionListIds;
+
+    
     public ThisisSpartaCore() { }
     public void Play()
     {
+        InstanceInit();
         LoadResourses();
         LoadData();
-        InstanceInit();
         GameInit();
         GameStart();
     }
 
     private void InstanceInit()
     {
-        _currentPlayer = new Player("_currentPlayer");
-        _currentVilliage = _resources.VilliageDataContainer.GetVilliage("Sparta");
         _printer = new ConsoleTypingPrinter(100);
         _functionReader = new FunctionReader();
+        _currentFunctionListIds = new CurrentFunctionListIds();
     }
 
     private void LoadResourses()
@@ -43,16 +58,20 @@ public class ThisisSpartaCore
     private void LoadData()
     {
         _resources = new ResourceManager();
+        
     }
 
     private void GameInit()
     {
+        _currentPlayer = new Player("스파르타 아기");
+        _currentVilliage = _resources.VilliageDataContainer.GetVilliage("Sparta");
         _printer.EndList.Add(" ");
         _printer.EndList.Add(_resources.StringContainer.GetString("RequestCommand"));
         
-        Command.Init(_resources,_currentPlayer,_currentVilliage,_printer);
-        string functionName = _currentVilliage.FunctionIDs[0]
-        _functionReader.GetFunction(functionName).Execute();
+        Command.Init(_resources,_currentPlayer,_currentVilliage,_printer,_currentFunctionListIds);
+        _currentFunctionListIds.FunctionListIds =
+            _resources.FunctionListContainer.GetFunctionList(_currentVilliage.FunctionIDs[0]);
+        _functionReader.GetFunction(_currentFunctionListIds.FunctionListIds[0]).Execute();
     }
 
     private bool isGameOver = false;
@@ -64,11 +83,12 @@ public class ThisisSpartaCore
         while (!isGameOver)
         {
             // 입력 받기
-            while(!TryGetKey(_currentVilliage.FunctionIDs.Count,out keyInput)) { }
+            Console.Write(">>");
+            while(!TryGetKey(_currentFunctionListIds.Count,out keyInput)) { }
             
             // 상태 변경, 변경된 상태 적용, 화면 보여주기
             //상태의 변경
-            string functionName = _currentVilliage.FunctionIDs[keyInput];
+            string functionName = _currentFunctionListIds.FunctionListIds[keyInput];
             _functionReader.GetFunction(functionName).Execute();
             
             
@@ -79,19 +99,16 @@ public class ThisisSpartaCore
 
     private bool TryGetKey(int range, out int key)
     {
-        char keyChar = '-';
         key = 0;
         bool isOk = false;
-        
-        Console.Write(">>");
-        keyChar = Console.ReadKey(true).KeyChar;
-        
-        if ('0' <= keyChar && keyChar <= range+'0')
+        if (int.TryParse(Console.ReadLine(), out key))
         {
-            key = (int)keyChar - '0';
-            isOk = true;
+            if (0 <= key && key <= range)
+            {
+                isOk = true;
+            }
         }
-
+        
         return isOk;
     }
     
