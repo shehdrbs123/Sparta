@@ -9,15 +9,17 @@ GoToDungoen|던전가기
 GoToStore|상점가기
 Level|Lv. {0:D2}
 Job|Char( {0} )
-Attack|공격력 : {0}
-Defense|방어력 : {0}
-Health|체 력 : {0}
+Attack|공격력 : {0} {1}
+Defense|방어력 : {0} {1}
+Health|체 력 : {0} {1}
 Gold|{0} G
 ItemList|[아이템 목록]
 CommandInInventory|인벤토리
-CommandInInventoryTop|인벤토리 - 장착 관리\n보유 중인 아이템을 관리할 수 있습니다.
+CommandInInventoryTop|인벤토리\n보유 중인 아이템을 관리할 수 있습니다.
+CommandInInventoryEquip|장비 관리
+CommandInInventoryEquipTop|인벤토리 - 장착 관리\n보유 중인 아이템을 장착할 수 있습니다.
 OldSword|낡은 검
 OldSwordDescription|관리가 제대로 이루어지지 않아 녹이 슨 검이다.
 CastIronArmor|철갑옷
-CastIronArmorDescription| 잘 제련된 철을 얆게 펴 만든 철갑옷이다
+CastIronArmorDescription|잘 제련된 철을 얆게 펴 만든 철갑옷이다
 END

@@ -31,7 +31,7 @@ public class ThisisSpartaCore
     private Player _currentPlayer;
     private FunctionReader _functionReader;
     private CurrentFunctionListIds _currentFunctionListIds;
-
+    private InputMemory _inputMemory;
     
     public ThisisSpartaCore() { }
     public void Play()
@@ -46,8 +46,9 @@ public class ThisisSpartaCore
     private void InstanceInit()
     {
         _printer = new ConsoleTypingPrinter(100);
-        _functionReader = new FunctionReader();
         _currentFunctionListIds = new CurrentFunctionListIds();
+        _functionReader = new FunctionReader();
+        _inputMemory = new InputMemory();
     }
 
     private void LoadResourses()
@@ -64,11 +65,13 @@ public class ThisisSpartaCore
     private void GameInit()
     {
         _currentPlayer = new Player("스파르타 아기");
+        _currentPlayer.Inventory.AddItemName("OldSword");
+        _currentPlayer.Inventory.AddItemName("CastIronArmor");
         _currentVilliage = _resources.VilliageDataContainer.GetVilliage("Sparta");
         _printer.EndList.Add(" ");
         _printer.EndList.Add(_resources.StringContainer.GetString("RequestCommand"));
         
-        Command.Init(_resources,_currentPlayer,_currentVilliage,_printer,_currentFunctionListIds);
+        Command.Init(_resources,_currentPlayer,_currentVilliage,_printer,_currentFunctionListIds,_inputMemory);
         _currentFunctionListIds.FunctionListIds =
             _resources.FunctionListContainer.GetFunctionList(_currentVilliage.FunctionIDs[0]);
         _functionReader.GetFunction(_currentFunctionListIds.FunctionListIds[0]).Execute();
@@ -84,13 +87,16 @@ public class ThisisSpartaCore
         {
             // 입력 받기
             Console.Write(">>");
-            while(!TryGetKey(_currentFunctionListIds.Count,out keyInput)) { }
+            while (!TryGetKey(_currentFunctionListIds.Count, out keyInput))
+            {
+                Console.WriteLine("잘못 입력하셨습니다.");
+                Console.Write(">>");
+            }
             
             // 상태 변경, 변경된 상태 적용, 화면 보여주기
             //상태의 변경
             string functionName = _currentFunctionListIds.FunctionListIds[keyInput];
             _functionReader.GetFunction(functionName).Execute();
-            
             
             // 화면 보여주기
             _printer.Print();
@@ -103,8 +109,9 @@ public class ThisisSpartaCore
         bool isOk = false;
         if (int.TryParse(Console.ReadLine(), out key))
         {
-            if (0 <= key && key <= range)
+            if (1 <= key && key < range)
             {
+                _inputMemory.preInput = key;
                 isOk = true;
             }
         }

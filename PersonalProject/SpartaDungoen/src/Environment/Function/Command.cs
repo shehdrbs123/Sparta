@@ -9,9 +9,10 @@ public abstract class Command
     protected static ConsoleTypingPrinter _consoleTypingPrinter;
     protected static FunctionListContainer _functionListContainer;
     protected static ItemDataContainer _itemDataContainer;
-    protected static CurrentFunctionListIds CurrentFunctionListIdsIDs;
+    protected static CurrentFunctionListIds _currentFunctionListIdsIDs;
+    protected static InputMemory _inputMemory;
 
-    public static void Init(ResourceManager resourceManager, Player currentPlayer, Villiage currentVilliage, ConsoleTypingPrinter consoleTypingPrinter, CurrentFunctionListIds currentFunctionListIdsIds)
+    public static void Init(ResourceManager resourceManager, Player currentPlayer, Villiage currentVilliage, ConsoleTypingPrinter consoleTypingPrinter, CurrentFunctionListIds currentFunctionListIdsIds, InputMemory inputMemory)
     {
         _resourceManager = resourceManager;
         _currentPlayer = currentPlayer;
@@ -21,7 +22,8 @@ public abstract class Command
         _villiageDataContainer = _resourceManager.VilliageDataContainer;
         _functionListContainer = _resourceManager.FunctionListContainer;
         _itemDataContainer = _resourceManager.ItemDataContainer;
-        CurrentFunctionListIdsIDs = currentFunctionListIdsIds;
+        _currentFunctionListIdsIDs = currentFunctionListIdsIds;
+        _inputMemory = inputMemory;
     }
     public abstract void Execute();
 }

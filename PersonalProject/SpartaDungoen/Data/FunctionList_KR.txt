@@ -1,4 +1,5 @@
 ﻿CommandInVilliage|3|CommandInVilliage|CommandInStatus|CommandInInventory
 CommandInStatus|2|CommandInStatus|CommandInVilliage
-CommandInInventory|2|CommandInInventory|CommandInVilliage
+CommandInInventory|3|CommandInInventory|CommandInInventoryEquip|CommandInVilliage
+CommandInInventoryEquip|2|CommandInInventoryEquip|CommandInInventory
 END

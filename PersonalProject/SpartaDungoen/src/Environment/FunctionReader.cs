@@ -14,11 +14,13 @@
         _functionDic[nameof(CommandInVilliage)] = new CommandInVilliage();
         _functionDic[nameof(CommandInStatus)] = new CommandInStatus();
         _functionDic[nameof(CommandInInventory)] = new CommandInInventory();
+        _functionDic[nameof(CommandInInventoryEquip)] = new CommandInInventoryEquip();
+        _functionDic[nameof(CommandEquip)] = new CommandEquip();
     }
 
-    public Command GetFunction(string FunctionID)
+    public Command GetFunction(string functionId)
     {
         
-        return _functionDic[FunctionID];
+        return _functionDic[functionId];
     }
 }

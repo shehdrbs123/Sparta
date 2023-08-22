@@ -1,19 +1,24 @@
 ﻿public class Inventory
 {
-    public List<string> Items;
+    private List<string> ItemNames;
 
     public Inventory()
     {
-        Items = new List<string>();
+        ItemNames = new List<string>();
     }
 
-    public string GetItem(int i)
+    public string GetItemString(int i)
     {
-        return Items[i];
+        return ItemNames[i];
     }
 
-    public void SetItem(string itemName)
+    public void AddItemName(string itemName)
     {
-        Items.Add(itemName);
+        ItemNames.Add(itemName);
+    }
+
+    public int Count
+    {
+        get { return ItemNames.Count; }
     }
 }

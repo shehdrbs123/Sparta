@@ -4,8 +4,8 @@
 }
 public class Item
 {
-    public string Name { get; set; }
-    public string Description { get; set; }
+    public string NameID { get; set; }
+    public string DescriptionID { get; set; }
     public EItemType Type { get; set; }
     public EStatus AbilityName { get; set; }
     public int AbilityValue { get; set; }

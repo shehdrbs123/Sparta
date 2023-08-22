@@ -15,13 +15,13 @@ public class CommandInVilliage : Command
 
         
         // Select Print
-        CurrentFunctionListIdsIDs.FunctionListIds = _functionListContainer.GetFunctionList(nameof(CommandInVilliage));
+        _currentFunctionListIdsIDs.FunctionListIds = _functionListContainer.GetFunctionList(nameof(CommandInVilliage));
         
-        int functionCount = CurrentFunctionListIdsIDs.Count;
+        int functionCount = _currentFunctionListIdsIDs.Count;
         
-        for (int i = 0; i < functionCount; i++)
+        for (int i = 1; i < functionCount; i++)
         {
-            string FunctionName = _stringContainer.GetString(CurrentFunctionListIdsIDs.FunctionListIds[i]);
+            string FunctionName = _stringContainer.GetString(_currentFunctionListIdsIDs.FunctionListIds[i]);
             _consoleTypingPrinter.SelectList.Add(i + ". " + FunctionName);
         }
     }

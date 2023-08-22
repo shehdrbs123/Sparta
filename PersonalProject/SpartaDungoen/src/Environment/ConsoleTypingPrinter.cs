@@ -95,7 +95,11 @@ public class ConsoleTypingPrinter
                 for (int charIdx = 0; charIdx < writeString.Length; charIdx++)
                 {
                     if (Console.KeyAvailable)
+                    {
+                        Console.ReadKey(true);
                         isWriteAll = true;
+                    }
+                        
                     if(isWriteAll == false)
                         Thread.Sleep(_typeSpeed);
                     ConsoleColor foreColor = ConsoleColor.White;
