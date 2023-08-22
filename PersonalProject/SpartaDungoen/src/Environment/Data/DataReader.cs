@@ -2,13 +2,15 @@
 
 public abstract class DataReader
 {
-    public void Init(string path)
+    public virtual void Init(string path)
     {
         StreamReader sr = new StreamReader(path);
-        string inputData = "END";
-        while (inputData != "END")
+        string inputData = "";
+        while (!sr.EndOfStream)
         {
             inputData = sr.ReadLine();
+            if (inputData == "END")
+                break;
             string[] data = inputData.Split('|');
             Process(data);
         }

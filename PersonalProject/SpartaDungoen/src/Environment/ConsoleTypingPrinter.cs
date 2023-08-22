@@ -1,74 +1,154 @@
-﻿namespace ConsolePrinter
+﻿
+using System.Text;
+
+public class ConsoleTypingPrinter
 {
-    public interface IPrinter
+    private enum ETypePos
     {
-        public List<string> TopList { set; get; }
-        public List<string> SelectList { set; get; }
-        public List<string> BottomList { set; get; }
+        Top,Info,Select,End
+    }
+    private int _typeSpeed;
+    private List<List<string>> _showList;
 
-        public void Print();
+    public List<ConsolePaint> Paints
+    {
+        get;
+        private set;
+    }
+    
+    public List<string> TopList
+    {
+        get
+        {
+            return _showList[(int)ETypePos.Top];
+        }
+        private set
+        {
+            _showList[(int)ETypePos.Top] = value;
+        }
+    }
+    
+    public List<string> InfoList
+    {
+        get
+        {
+            return _showList[(int)ETypePos.Info];
+        }
+        private set
+        {
+            _showList[(int)ETypePos.Info] = value;
+        }
+    }
+    
+    public List<string> SelectList
+    {
+        get
+        {
+            return _showList[(int)ETypePos.Select];
+        }
+        private set
+        {
+            _showList[(int)ETypePos.Select] = value;
+        }
+    }
+    
+    public List<string> EndList
+    {
+        get
+        {
+            return _showList[(int)ETypePos.End];
+        }
+        private set
+        {
+            _showList[(int)ETypePos.End] = value;
+        }
+    }
+    
+    public ConsoleTypingPrinter(int typeSpeed)
+    {
+        _typeSpeed = typeSpeed;
+        _showList = new List<List<string>>();
+        _showList.Capacity = 4;
+        Paints = new List<ConsolePaint>();
+
+        for (int i = 0; i < _showList.Capacity; i++)
+        {
+            _showList.Add(new List<string>());
+        }
     }
 
-    public class ConsoleTypingPrinter : IPrinter
+    public void Print()
     {
-        private List<string>[] _stringList;
-        private int _typeSpeed;
-
-        private enum EWritePos
+        bool isWriteAll = false;
+        int paintsIdx = 0;
+        foreach (var writeList in _showList)
         {
-            Top = 0,
-            Select,
-            Bottom
-        }
-
-        public List<string> TopList
-        {
-            get { return _stringList[(int)EWritePos.Top]; }
-            set { _stringList[(int)EWritePos.Top] = value; }
-        }
-
-        public List<string> SelectList
-        {
-            get { return _stringList[(int)EWritePos.Select]; }
-            set { _stringList[(int)EWritePos.Select] = value; }
-        }
-
-        public List<string> BottomList
-        {
-            get { return _stringList[(int)EWritePos.Bottom]; }
-            set { _stringList[(int)EWritePos.Top] = value; }
-        }
-
-        public ConsoleTypingPrinter(int typeSpeed)
-        {
-            _stringList = new List<string>[] { new List<string>(), new List<string>(), new List<string>() };
-            foreach (var list in _stringList)
+            for (int line = 0; line < writeList.Count(); ++line)
             {
-                list.Capacity = 10;
-            }
-
-            _typeSpeed = typeSpeed;
-        }
-
-        public void Print()
-        {
-            bool isWriteAll = false;
-            foreach (var writelist in _stringList)
-            {
-                foreach (var writeData in writelist)
+                string writeString = writeList[line];
+                for (int charIdx = 0; charIdx < writeString.Length; charIdx++)
                 {
-                    for (int i = 0; i < writeData.Length; ++i)
+                    if (Console.KeyAvailable)
+                        isWriteAll = true;
+                    if(isWriteAll == false)
+                        Thread.Sleep(_typeSpeed);
+                    ConsoleColor foreColor = ConsoleColor.White;
+                    ConsoleColor backColor = ConsoleColor.Black;
+                    if (Paints.Count > 0 && paintsIdx < Paints.Count )
                     {
-                        if (Console.KeyAvailable)
-                            isWriteAll = true;
-                        if (!isWriteAll)
-                            Thread.Sleep(_typeSpeed);
-                        Console.Write(writeData[i]);
-                    }
-                    Console.Write('\n');
-                }
+                        ConsolePaint paints = Paints[paintsIdx];
+                        if (paints.Line == line && paints.Start <= charIdx && charIdx <= paints.End)
+                        {
+                            foreColor = paints.ForeColor;
+                            backColor = paints.BackColor;
+                        }
 
+                        if (paints.End == charIdx)
+                        {
+                            paintsIdx++;
+                            Console.ResetColor();
+                        }
+                            
+                    }
+                    WriteType(writeString[charIdx],foreColor,backColor);
+                }
+                Console.WriteLine();
             }
         }
+        Clear();
     }
+
+    private void Clear()
+    {
+        TopList.Clear();
+        InfoList.Clear();
+        SelectList.Clear();
+        Paints.Clear();
+    }
+    
+    private void WriteType(char data, ConsoleColor foreColor = ConsoleColor.White, ConsoleColor backColor =ConsoleColor.Black)
+    {
+        Console.ForegroundColor = foreColor;
+        Console.BackgroundColor = backColor;
+        Console.Write(data);
+    }
+}
+
+public struct ConsolePaint
+{
+    public ConsolePaint(int line, int start, int end, ConsoleColor foreColor, ConsoleColor backColor,bool isBold = false)
+    {
+        Line = line;
+        Start = start;
+        End = end;
+        ForeColor = foreColor;
+        BackColor = backColor;
+        IsBold = isBold;
+    }
+    public int Line;
+    public int Start;
+    public int End;
+    public ConsoleColor ForeColor;
+    public ConsoleColor BackColor;
+    public bool IsBold;
 }

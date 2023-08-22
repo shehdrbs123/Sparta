@@ -1,16 +1,12 @@
-﻿namespace PersonalProject_스파르타던전.DataClass;
-
-
-public enum EItemType
+﻿public enum EItemType
 {
-    Hand,Shirt,Pants,Shoes,Head
+    Hand=0,Shirt,Pants,Shoes,Head
 }
-public interface IItem
+public class Item
 {
-    string Name { get; }
-    string Description { get; }
-    EItemType Type { get; }
-    EStatus AbilityName { get; }
-    int AbilityValue { get; }
-    
+    public string Name { get; set; }
+    public string Description { get; set; }
+    public EItemType Type { get; set; }
+    public EStatus AbilityName { get; set; }
+    public int AbilityValue { get; set; }
 }

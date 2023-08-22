@@ -1,5 +1,10 @@
 ﻿public class Villiage
 {
-    public string Name{ set; get; }
-    public List<string> Function { set; get; }
+    public string NameID{ set; get; }
+    public List<string> FunctionIDs { private set; get; }
+
+    public Villiage()
+    {
+        FunctionIDs = new List<string>();
+    }
 }

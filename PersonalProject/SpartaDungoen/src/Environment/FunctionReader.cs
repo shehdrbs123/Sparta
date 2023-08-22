@@ -1,41 +1,24 @@
-﻿using ConsolePrinter;
-
-public delegate void Function(params Object[] param); 
-public class FunctionReader
+﻿public class FunctionReader
 {
-    private static FunctionReader _instance;
-    public static FunctionReader Instance
+    private const string InVilliage = "InVilliage";
+    private Dictionary<string, Command> _functionDic;
+
+    public FunctionReader()
     {
-        get
-        {
-            if (_instance == null)
-                _instance = new FunctionReader();
-            return _instance;
-        }
-        private set
-        {
-            _instance = value;
-        }
+        _functionDic = new Dictionary<string, Command>();
+
+        SettingFunction();
     }
 
-    private Dictionary<string, List<Function>> FunctionDic;
-    
-    private FunctionReader()
+    private void SettingFunction()
     {
-        FunctionDic = new Dictionary<string, List<Function>>();
-        
-        
+        _functionDic[InVilliage] = new InVilliage();
+        //_functionDic[]
     }
 
-    public List<Function> GetFunction(string key)
-    {
-        return FunctionDic[key];
-    }
-
-    private void InViliage(IPrinter printer, Villiage villiage)
+    public Command GetFunction(string FunctionID)
     {
         
+        return _functionDic[FunctionID];
     }
-
-
 }

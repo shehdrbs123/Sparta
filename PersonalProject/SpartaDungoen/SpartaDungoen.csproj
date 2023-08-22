@@ -16,17 +16,7 @@
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
       <OutputPath>bin\Debug\</OutputPath>
     </PropertyGroup>
-
-    <ItemGroup>
-      <Compile Remove="net7.0\**" />
-      <Compile Include="src\DataClass\IItem.cs" />
-      <Compile Include="src\DataClass\Status.cs" />
-      <Compile Include="src\Environment\Data\ResourceManager.cs" />
-      <Compile Include="src\Environment\FunctionReader.cs" />
-      <EmbeddedResource Remove="net7.0\**" />
-      <None Remove="net7.0\**" />
-    </ItemGroup>
-
+    
     <ItemGroup>
       <Folder Include="Resource\" />
     </ItemGroup>

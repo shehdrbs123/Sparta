@@ -1,7 +1,5 @@
-﻿InVilliageTop_1|{0} 마을에 오신 여러분 환영합니다. 
-InVilliageTop_2|이곳에서 던전으로 들어가기 전 활동을 할 수 있습니다.
+﻿InVilliageTop|{0} 마을에 오신 여러분 환영합니다.\n이곳에서 던전으로 들어가기 전 활동을 할 수 있습니다. 
 RequestCommand|원하시는 행동을 입력해주세요
-CommandLine|>>
 Sparta|스파르타
 InVilliage|마을가기
 InStatue|상태보기
@@ -19,5 +17,5 @@ Inventory_2|보유 중인 아이템을 관리할 수 있습니다.
 RustySword|녹슨검
 RustySwordDescription|관리가 제대로 이루어지지 않아 녹이 슨 검이다.
 IronArmor|철갑옷
-IronArmorDescription| 잘 제련된 철을 얆게 펴 만든 철값옷이다
+IronArmorDescription| 잘 제련된 철을 얆게 펴 만든 철갑옷이다
 END
