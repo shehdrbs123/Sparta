@@ -7,5 +7,6 @@ CommandInStoreBuy|2|CommandInStoreBuy|CommandInStore
 CommandInStoreSell|2|CommandInStoreSell|CommandInStore
 CommandBuy|2|CommandInStoreBuy|CommandInStore
 CommandSell|2|CommandInStoreSell|CommandInStore
+CommandDungoenFight|2|CommandDungoenFight|CommandInVilliage
 CommandInDungoen|2|CommandInDungoen|CommandInVilliage
 END

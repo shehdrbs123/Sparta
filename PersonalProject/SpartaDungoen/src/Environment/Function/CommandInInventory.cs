@@ -3,10 +3,8 @@
     public override void Execute()
     {
         //  Top Print
-        string functionName = nameof(CommandInInventory);
-        string title = _stringContainer.GetString(functionName+"Top");
-        _consoleTypingPrinter.TopList.Add(title);
-        _consoleTypingPrinter.TopList.Add("");
+        string functionName = GetType().Name;
+        TopListEdit(functionName);
 
         // Info Print
         Inventory inventory = _currentPlayer.Inventory;

@@ -21,6 +21,8 @@
         _functionDic[nameof(CommandBuy)] = new CommandBuy();
         _functionDic[nameof(CommandInStoreSell)] = new CommandInStoreSell();
         _functionDic[nameof(CommandSell)] = new CommandSell();
+        _functionDic[nameof(CommandInDungoen)] = new CommandInDungoen();
+        _functionDic[nameof(CommandDungoenFight)] = new CommandDungoenFight();
     }
 
     public Command GetFunction(string functionId)

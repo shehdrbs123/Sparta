@@ -24,9 +24,9 @@
         _consoleTypingPrinter.InfoList.Add($"이름 : {name} \n");
         _consoleTypingPrinter.InfoList.Add(string.Format(level, _currentPlayer.Status.Level));
         _consoleTypingPrinter.InfoList.Add(string.Format(Job, _currentPlayer.Status.Job));
-        _consoleTypingPrinter.InfoList.Add(string.Format(Attack, _currentPlayer.Status.Attack,ExtraAttack));
-        _consoleTypingPrinter.InfoList.Add(string.Format(Defense, _currentPlayer.Status.Defense,ExtraDefense));
-        _consoleTypingPrinter.InfoList.Add(string.Format(Health, _currentPlayer.Status.Health,ExtraHealth));
+        _consoleTypingPrinter.InfoList.Add(string.Format(Attack, _currentPlayer.Status.Attack+_currentPlayer.Status.ExtraAttack,ExtraAttack));
+        _consoleTypingPrinter.InfoList.Add(string.Format(Defense, _currentPlayer.Status.Defense+_currentPlayer.Status.ExtraDefense,ExtraDefense));
+        _consoleTypingPrinter.InfoList.Add(string.Format(Health, _currentPlayer.Status.Health+_currentPlayer.Status.ExtraDefense,ExtraHealth));
         _consoleTypingPrinter.InfoList.Add(string.Format(Gold, _currentPlayer.Status.Gold));
         _consoleTypingPrinter.InfoList.Add(" ");
 

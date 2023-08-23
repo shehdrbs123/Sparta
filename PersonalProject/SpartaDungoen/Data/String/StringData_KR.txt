@@ -41,5 +41,14 @@ Selled|판매완료
 NotEnoughMoney|잔액이 부족합니다.
 AlreadyBuy|이미 구매한 물품입니다.
 CommandInDungoen|던전가기
-CommandInDungoenTop|던전가기\n
+CommandInDungoenTop|던전가기\n이곳에서 던전으로 들어아기전 활동을 할 수 있습니다.
+CommandDungoenClear|던전 클리어\n축하합니다!!\n{0}을 클리어 하였습니다.
+CommandDungoenDefeat|패배!!!!!\n아쉽군요!!\n난이도가 낮은 던전이나, 캐릭터의 능력을 올려보세요
+Easy|쉬운 던전
+Medium|일반 던전
+Hard|어려운 던전
+ExploreResult|[탐험 결과]
+BaseDefense|권장 방어력
+ResultHealth|체력 {0} -> {1}
+ResultGold|Gold {0} G -> {1} G
 END
