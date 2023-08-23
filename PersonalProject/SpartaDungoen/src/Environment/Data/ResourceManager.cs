@@ -14,16 +14,17 @@
         StringContainer = new StringContainer();
         StringContainer.Init("Data\\String\\StringData_KR.txt");
         VilliageDataContainer = new VilliageDataContainer();
-        VilliageDataContainer.Init("Data\\VilliageData_KR.txt");
+        VilliageDataContainer.Init("Data\\VilliageData.txt");
         FunctionListContainer = new FunctionListContainer();
-        FunctionListContainer.Init("Data\\FunctionList_KR.txt");
+        FunctionListContainer.Init("Data\\FunctionList.txt");
         ItemDataContainer = new ItemDataContainer();
-        ItemDataContainer.Init("Data\\ItemList_KR.txt");
+        ItemDataContainer.Init("Data\\ItemList.txt");
+        
         StoreDataContainer = new StoreDataContainer();
-        StoreDataContainer.Init("Data\\StoreData_KR.txt");
+        StoreDataContainer.Init("Data\\StoreData.txt");
         DungoenListDataContainer = new DungoenListDataContainer();
-        DungoenListDataContainer.Init("Data\\DungoenListData_KR.txt");
+        DungoenListDataContainer.Init("Data\\DungoenListData.txt");
         DungoenDataContainer = new DungoenDataContainer();
-        DungoenDataContainer.Init("Data\\DungoenData_KR.txt");
+        DungoenDataContainer.Init("Data\\DungoenData.txt");
     }
 }
