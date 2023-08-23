@@ -67,6 +67,8 @@ public class ThisisSpartaCore
         _currentPlayer = new Player("스파르타 아기");
         _currentPlayer.Inventory.AddItemName("OldSword");
         _currentPlayer.Inventory.AddItemName("CastIronArmor");
+        _currentPlayer.Inventory.AddItemName("SteelSword");
+        
         _currentVilliage = _resources.VilliageDataContainer.GetVilliage("Sparta");
         _printer.EndList.Add(" ");
         _printer.EndList.Add(_resources.StringContainer.GetString("RequestCommand"));

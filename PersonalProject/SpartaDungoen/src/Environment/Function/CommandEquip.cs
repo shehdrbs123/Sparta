@@ -2,19 +2,12 @@
 {
     public override void Execute()
     {
-        int input = _inputMemory.preInput - basicSize.Value;
+        int input = _inputMemory.preInput - firstFunctionListSize.Value;
 
-        string itemString = _currentPlayer.Inventory.GetItemString(input);
-        Item item = _itemDataContainer.GetItem(itemString);
+        string newItemString = _currentPlayer.Inventory.GetItemID(input);
+        Item newItem = _itemDataContainer.GetItem(newItemString);
 
-        Item currentEquiped = _currentPlayer.Equiped[(int)item.Type];
-        if (currentEquiped == item)
-        {
-            _currentPlayer.Equiped[(int)item.Type] = null;
-        }else
-        {
-            _currentPlayer.Equiped[(int)item.Type] = item;
-        } 
+        _currentPlayer.Equip(newItem);
 
         base.Execute();
     }

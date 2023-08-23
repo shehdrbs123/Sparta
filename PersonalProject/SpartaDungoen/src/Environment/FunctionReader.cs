@@ -16,6 +16,11 @@
         _functionDic[nameof(CommandInInventory)] = new CommandInInventory();
         _functionDic[nameof(CommandInInventoryEquip)] = new CommandInInventoryEquip();
         _functionDic[nameof(CommandEquip)] = new CommandEquip();
+        _functionDic[nameof(CommandInStore)] = new CommandInStore();
+        _functionDic[nameof(CommandInStoreBuy)] = new CommandInStoreBuy();
+        _functionDic[nameof(CommandBuy)] = new CommandBuy();
+        _functionDic[nameof(CommandInStoreSell)] = new CommandInStoreSell();
+        _functionDic[nameof(CommandSell)] = new CommandSell();
     }
 
     public Command GetFunction(string functionId)

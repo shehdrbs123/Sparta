@@ -19,7 +19,7 @@
 
         string ExtraAttack = "(" + _currentPlayer.Status.ExtraAttack + ")";
         string ExtraDefense = "(" + _currentPlayer.Status.ExtraDefense + ")";
-        string ExtraHealth = "(" + _currentPlayer.Status.ExtraHealth + ")";
+        string ExtraHealth = "(" + _currentPlayer.Status.ExtraHealth + ")"; 
         
         _consoleTypingPrinter.InfoList.Add($"이름 : {name} \n");
         _consoleTypingPrinter.InfoList.Add(string.Format(level, _currentPlayer.Status.Level));

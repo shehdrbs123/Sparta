@@ -9,6 +9,7 @@ public abstract class Command
     protected static ConsoleTypingPrinter _consoleTypingPrinter;
     protected static FunctionListContainer _functionListContainer;
     protected static ItemDataContainer _itemDataContainer;
+    protected static StoreDataContainer _storeDataContainer;
     protected static CurrentFunctionListIds _currentFunctionListIdsIDs;
     protected static InputMemory _inputMemory;
 
@@ -22,6 +23,7 @@ public abstract class Command
         _villiageDataContainer = _resourceManager.VilliageDataContainer;
         _functionListContainer = _resourceManager.FunctionListContainer;
         _itemDataContainer = _resourceManager.ItemDataContainer;
+        _storeDataContainer = _resourceManager.StoreDataContainer;
         _currentFunctionListIdsIDs = currentFunctionListIdsIds;
         _inputMemory = inputMemory;
     }

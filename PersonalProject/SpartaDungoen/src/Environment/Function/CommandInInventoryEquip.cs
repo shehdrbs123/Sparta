@@ -1,14 +1,14 @@
 ﻿public class CommandInInventoryEquip : Command
 {
-    public static int? basicSize;
+    public static int? firstFunctionListSize;
 
     public override void Execute()
     {
         //  Top Print
         string functionName = nameof(CommandInInventoryEquip);
         _currentFunctionListIdsIDs.FunctionListIds = _functionListContainer.GetFunctionList(functionName);
-        if (!basicSize.HasValue)
-            basicSize = _currentFunctionListIdsIDs.FunctionListIds.Count;
+        if (!firstFunctionListSize.HasValue)
+            firstFunctionListSize = _currentFunctionListIdsIDs.FunctionListIds.Count;
         string title = _stringContainer.GetString(functionName+"Top");
         _consoleTypingPrinter.TopList.Add(title);
         _consoleTypingPrinter.TopList.Add("");
@@ -19,36 +19,51 @@
         _consoleTypingPrinter.InfoList.Add(_stringContainer.GetString("ItemList"));
         for (int i = 0; i < inventory.Count; i++)
         {
-            Item item = _itemDataContainer.GetItem(inventory.GetItemString(i));
+            Item item = _itemDataContainer.GetItem(inventory.GetItemID(i));
             string abilityValue = item.AbilityValue >= 0 ? "+" + item.AbilityValue : "-" + item.AbilityValue;
             string name = _stringContainer.GetString(item.NameID);
             string description = _stringContainer.GetString(item.DescriptionID);
-            string AbilityType = item.AbilityName.ToString();
-            string Equip = "[E]";
-            
-            if (_currentPlayer.Equiped[(int)item.Type] == null)
+            string AbilityType = item.AbilityType.ToString();
+            string Equip = "";
+
+            Item currentEquip = _currentPlayer.Equiped[(int)item.EquipType];
+            if (currentEquip != null && currentEquip == item)
             {
-                Equip = "";
+                Equip = "[E]";
             }
 
-            string result = string.Format($"- {i+basicSize}. {Equip,4} {name,-10}|{AbilityType,-10} {abilityValue,-6}|{description}");
+            string result = string.Format($"- {i+firstFunctionListSize}. {Equip,4} {name,-20}|{AbilityType,-10} {abilityValue,-6}|{description}");
             _consoleTypingPrinter.InfoList.Add(result);
         }
         _consoleTypingPrinter.InfoList.Add("");
         
         //  Select Print
-        
-        
-        int functionCount = _currentFunctionListIdsIDs.Count;
-        for (int i = 1; i < basicSize; i++)
+        for (int i = 1; i < firstFunctionListSize; i++)
         {
             string FunctionName = _stringContainer.GetString(_currentFunctionListIdsIDs.FunctionListIds[i]);
             _consoleTypingPrinter.SelectList.Add(i + ". " + FunctionName);
         }
         
-        for (int i = 0; i < inventory.Count; i++)
+        // 인벤토리 내 값 선택을 위해 내용 추가.
+        int? preInventoryCount = _currentFunctionListIdsIDs.Count - firstFunctionListSize;
+        if (preInventoryCount > inventory.Count)
         {
-            _currentFunctionListIdsIDs.FunctionListIds.Add("CommandEquip");    
+            while (preInventoryCount != inventory.Count)
+            {
+                _currentFunctionListIdsIDs.FunctionListIds.RemoveAt(_currentFunctionListIdsIDs.FunctionListIds.Count-1);
+                --preInventoryCount;
+            }
+            
         }
+        else if(preInventoryCount < inventory.Count)
+        {
+            while (preInventoryCount != inventory.Count)
+            {
+                _currentFunctionListIdsIDs.FunctionListIds.Add("CommandEquip");
+                ++preInventoryCount;
+            }
+            
+        }
+                    
     }
 }

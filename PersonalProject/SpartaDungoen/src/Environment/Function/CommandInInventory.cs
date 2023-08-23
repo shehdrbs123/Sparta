@@ -14,20 +14,20 @@
         _consoleTypingPrinter.InfoList.Add(_stringContainer.GetString("ItemList"));
         for (int i = 0; i < inventory.Count; i++)
         {
-            Item item = _itemDataContainer.GetItem(inventory.GetItemString(i));
+            Item item = _itemDataContainer.GetItem(inventory.GetItemID(i));
             string abilityValue = item.AbilityValue >= 0 ? "+" + item.AbilityValue : "-" + item.AbilityValue;
             string name = _stringContainer.GetString(item.NameID);
             string description = _stringContainer.GetString(item.DescriptionID);
-            string AbilityType = item.AbilityName.ToString();
+            string AbilityType = item.AbilityType.ToString();
             string Equip = "";
 
-            Item currentEquip = _currentPlayer.Equiped[(int)item.AbilityName];
+            Item currentEquip = _currentPlayer.Equiped[(int)item.EquipType];
             if (currentEquip != null && currentEquip == item)
             {
                 Equip = "[E]";
             }
             
-            string result = string.Format($"- {Equip,4} {name,-10}|{AbilityType,-10} {abilityValue,-6}|{description}");
+            string result = string.Format($"- {Equip,4} {name,-20}|{AbilityType,-10} {abilityValue,-6}|{description}");
             _consoleTypingPrinter.InfoList.Add(result);
         }
         _consoleTypingPrinter.InfoList.Add("");

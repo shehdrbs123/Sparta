@@ -5,6 +5,7 @@
     public FunctionListContainer FunctionListContainer { get; private set; }
     
     public ItemDataContainer ItemDataContainer { get; private set; }
+    public StoreDataContainer StoreDataContainer { get; private set; }
     public ResourceManager()
     {
         StringContainer = new StringContainer();
@@ -15,5 +16,7 @@
         FunctionListContainer.Init("Data\\FunctionList_KR.txt");
         ItemDataContainer = new ItemDataContainer();
         ItemDataContainer.Init("Data\\ItemList_KR.txt");
+        StoreDataContainer = new StoreDataContainer();
+        StoreDataContainer.Init("Data\\StoreData_KR.txt");
     }
 }

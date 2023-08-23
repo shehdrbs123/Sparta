@@ -1,5 +1,11 @@
-﻿CommandInVilliage|3|CommandInVilliage|CommandInStatus|CommandInInventory
+﻿CommandInVilliage|5|CommandInVilliage|CommandInStatus|CommandInInventory|CommandInStore|CommandInDungoen
 CommandInStatus|2|CommandInStatus|CommandInVilliage
 CommandInInventory|3|CommandInInventory|CommandInInventoryEquip|CommandInVilliage
 CommandInInventoryEquip|2|CommandInInventoryEquip|CommandInInventory
+CommandInStore|4|CommandInStore|CommandInStoreBuy|CommandInStoreSell|CommandInVilliage
+CommandInStoreBuy|2|CommandInStoreBuy|CommandInStore
+CommandInStoreSell|2|CommandInStoreSell|CommandInStore
+CommandBuy|2|CommandInStoreBuy|CommandInStore
+CommandSell|2|CommandInStoreSell|CommandInStore
+CommandInDungoen|2|CommandInDungoen|CommandInVilliage
 END
