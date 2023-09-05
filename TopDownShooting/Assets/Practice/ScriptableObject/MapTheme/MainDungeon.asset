@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6385c9a01a730134d8cc8fe8e197b405, type: 3}
+  m_Name: MainDungeon
+  m_EditorClassIdentifier: 
+  _ground:
+  - {fileID: 11400000, guid: 727d704723959c948adb73b9c8a20c7d, type: 2}
+  - {fileID: 11400000, guid: d72b4b7198aa0fb469b19fd82cb702dc, type: 2}
+  - {fileID: 11400000, guid: f267bacd0e7e7a14e968460e47ef6e2b, type: 2}
+  _groundPossibility: 320000001e00000014000000
+  _groundDeco: []
+  _groundDecoPossibility: 
+  groundOrderInLayer: 0
+  _walls:
+  - {fileID: 11400000, guid: c93adfa77c0c16b48bd7277f1fdd972a, type: 2}
+  _wallsPossiability: 00000000
+  _wallDeco: []
+  _wallsDecoPossibility: 
+  _wallLeftCorners:
+  - {fileID: 11400000, guid: 29bc418c1ac72ff47991237acda29714, type: 2}
+  _wallLeftCornersPossibility: 00000000
+  _wallRightCorners:
+  - {fileID: 11400000, guid: 61b3ded782bfe7f4c89748a28e266dc9, type: 2}
+  _wallRightCornersPossibility: 00000000
+  _wallTopLeft:
+  - {fileID: 11400000, guid: 1bc676f691ebea24f82c618bb970d473, type: 2}
+  _wallTopLeftPossibility: 00000000
+  _wallTopRight:
+  - {fileID: 11400000, guid: ad416233cb13e0543af628378304a57d, type: 2}
+  _wallTopRightPossibility: 00000000
+  _wallTopMiddle:
+  - {fileID: 11400000, guid: 79b269c3c597fb94c8c94728455ab889, type: 2}
+  _wallTopMiddlePossibility: 00000000
+  _wallLeftSide:
+  - {fileID: 11400000, guid: 40e78aafdc9da0c4ea6c4cd008f449c0, type: 2}
+  _wallLeftSidePossibility: 00000000
+  _wallRightSide:
+  - {fileID: 11400000, guid: 6ecc850a203c6f942a7128aba4b7b4cb, type: 2}
+  _wallRightSidePossibility: 00000000
+  _wallBottomTopLeftCorner:
+  - {fileID: 11400000, guid: c82b42f672587b14d96726cb6439f816, type: 2}
+  _wallBottomTopLeftCornerPossibility: 00000000
+  _wallBottomTopRightCorner:
+  - {fileID: 11400000, guid: 7550f031376178e4db0284ebe43ba1d8, type: 2}
+  _wallBottomTopRightCornerPossibility: 00000000
+  _wallBottomLeft:
+  - {fileID: 11400000, guid: 6b2a73e335f3de24eaa4bd57fd42de5f, type: 2}
+  _wallBottomLeftPossibility: 00000000
+  _wallBottomRight:
+  - {fileID: 11400000, guid: 26c9427c8fe36ad47ab53552935c2fc1, type: 2}
+  _wallBottomRightPossibility: 00000000
+  _backDesignOrderInLayer: 3
+  _foreDesignOrderInLayer: 20

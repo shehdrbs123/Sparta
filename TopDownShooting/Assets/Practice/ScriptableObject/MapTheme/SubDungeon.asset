@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6385c9a01a730134d8cc8fe8e197b405, type: 3}
+  m_Name: SubDungeon
+  m_EditorClassIdentifier: 
+  _ground:
+  - {fileID: 11400000, guid: 9c53c218c423531418eb4dbc203da4bd, type: 2}
+  - {fileID: 11400000, guid: 3f122cd619f022b4a8171c782065d9dd, type: 2}
+  - {fileID: 11400000, guid: e946359f0ffc2f0459bea5c7e373257c, type: 2}
+  - {fileID: 11400000, guid: 175ea6c56e5f2c74f9321329f1b5383a, type: 2}
+  - {fileID: 11400000, guid: ae8f1746e3d4b784da294e150207adf3, type: 2}
+  - {fileID: 11400000, guid: b433e593669970a4c8b9c3a2aa7c7b1e, type: 2}
+  _groundPossibility: 000000000000000000000000000000000000000000000000
+  _groundDeco: []
+  _groundDecoPossibility: 
+  groundOrderInLayer: 0
+  _walls:
+  - {fileID: 11400000, guid: 1c2494e7e394ddc498310b147246eef8, type: 2}
+  - {fileID: 11400000, guid: 6de52887d8918e94988198d5332b20e9, type: 2}
+  - {fileID: 11400000, guid: 882775fab61305e4db97375ceb503287, type: 2}
+  - {fileID: 11400000, guid: b0ca9f8f3f4ae8049bfc822d9dc68c7e, type: 2}
+  _wallsPossiability: 00000000000000000000000000000000
+  _wallGroundEdge:
+  - {fileID: 11400000, guid: 2430827857223ff47bd2591fb46ab920, type: 2}
+  _wallGroundEdgePossibiliity: 00000000
+  _wallDeco: []
+  _wallsDecoPossibility: 
+  _wallLeftCorners:
+  - {fileID: 11400000, guid: 23aaa586a3770ac4aa601f775d3db327, type: 2}
+  _wallLeftCornersPossibility: 00000000
+  _wallRightCorners:
+  - {fileID: 11400000, guid: 381a7b8c4259b4a42a5f3c0ec29edc69, type: 2}
+  _wallRightCornersPossibility: 00000000
+  _wallTopLeft:
+  - {fileID: 11400000, guid: 5359faf040a1e1a428b807da1c5eb6c3, type: 2}
+  _wallTopLeftPossibility: 00000000
+  _wallTopRight:
+  - {fileID: 11400000, guid: 5359faf040a1e1a428b807da1c5eb6c3, type: 2}
+  _wallTopRightPossibility: 00000000
+  _wallTopMiddle:
+  - {fileID: 11400000, guid: 5359faf040a1e1a428b807da1c5eb6c3, type: 2}
+  _wallTopMiddlePossibility: 00000000
+  _wallLeftSide:
+  - {fileID: 11400000, guid: 23aaa586a3770ac4aa601f775d3db327, type: 2}
+  _wallLeftSidePossibility: 00000000
+  _wallRightSide:
+  - {fileID: 11400000, guid: 381a7b8c4259b4a42a5f3c0ec29edc69, type: 2}
+  _wallRightSidePossibility: 00000000
+  _wallBottomTopLeftCorner:
+  - {fileID: 11400000, guid: 5359faf040a1e1a428b807da1c5eb6c3, type: 2}
+  _wallBottomTopLeftCornerPossibility: 00000000
+  _wallBottomTopRightCorner:
+  - {fileID: 11400000, guid: 5359faf040a1e1a428b807da1c5eb6c3, type: 2}
+  _wallBottomTopRightCornerPossibility: 00000000
+  _wallBottomLeft:
+  - {fileID: 11400000, guid: 2798897d258ba874397ed0e08e95d320, type: 2}
+  _wallBottomLeftPossibility: 00000000
+  _wallBottomRight:
+  - {fileID: 11400000, guid: c0be3f3712a229a4785f899d869ecd4b, type: 2}
+  _wallBottomRightPossibility: 00000000
+  _backDesignOrderInLayer: 3
+  _foreDesignOrderInLayer: 20
