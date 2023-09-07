@@ -19,12 +19,4 @@ public abstract class BaseUI : MonoBehaviour
     {
         _uiManager.InputIgnore();
     }
-
-    protected void LoadScene(string sceneName)
-    {
-        if (SceneManager.GetActiveScene().name != sceneName)
-        {
-            SceneManager.LoadScene(sceneName);
-        }
-    }
 }

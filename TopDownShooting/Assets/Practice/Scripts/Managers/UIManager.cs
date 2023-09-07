@@ -7,13 +7,12 @@ using UnityEngine.InputSystem;
 public class UIManager : MonoBehaviour
 {
     private ObjectPool<GameObject> pool;
-    private Dictionary<string, GameObject> Prefabs;
     private bool IsInputIgnore=false;
     private void Awake()
     {
         pool = new ObjectPool<GameObject>();
-        Prefabs = ClassGetter.GetResourcePrefabs<GameObject>("Prefabs/UI");
-        pool.SetPrefabs(Prefabs);
+        Dictionary<string, GameObject> Prefabs = ClassGetter.GetResourcePrefabs<GameObject>("Prefabs/UI");
+        pool.SetOriginalObjects(Prefabs);
     }
 
     public GameObject GetUI(string name)

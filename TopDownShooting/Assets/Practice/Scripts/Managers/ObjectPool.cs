@@ -6,7 +6,7 @@ namespace Practice.Scripts.Managers
     public class ObjectPool<T> where T : UnityEngine.Object
     {
         private Dictionary<string, T> _pool;
-        private Dictionary<string, T> _Prefabs;
+        private Dictionary<string, T> _original;
         public ObjectPool()
         {
             _pool = new Dictionary<string, T>();
@@ -18,7 +18,7 @@ namespace Practice.Scripts.Managers
             if (!_pool.TryGetValue(Id, out result))
             {
                 T obj;
-                if (_Prefabs.TryGetValue(Id, out obj))
+                if (_original.TryGetValue(Id, out obj))
                 {
                     T newObj = GameObject.Instantiate(obj);
                     return newObj;
@@ -31,9 +31,9 @@ namespace Practice.Scripts.Managers
             return result;
         }
 
-        public void SetPrefabs(Dictionary<string, T> newPool)
+        public void SetOriginalObjects(Dictionary<string, T> newOriginalObjects)
         {
-            _Prefabs = newPool;
+            _original = newOriginalObjects;
         }
     }
 }

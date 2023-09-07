@@ -76,7 +76,6 @@ public class MapTool : MonoBehaviour
         SettingTilePercents();
     }
     
-
     public void MakeMap()
     {
         if (IsTilesOk())

@@ -20,7 +20,7 @@ public class TopDownCharacterController1 : MonoBehaviour
         HandleAttackDelay();        
     }
 
-    public void HandleAttackDelay()
+    private void HandleAttackDelay()
     {
         if (_timeSinceLastShoot < attackDelay)
         {
