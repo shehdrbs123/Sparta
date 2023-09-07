@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -18,6 +19,11 @@ namespace Practice.Scripts.UI
             {
                 SceneManager.sceneLoaded += player.StartInit;
                 SceneManager.LoadScene("MapGenScene");
+            }
+
+            if (player.GetComponent<PlayerInput>().inputIsActive == false)
+            {
+                InputActiveToggle();
             }
             gameObject.SetActive(false);
         }

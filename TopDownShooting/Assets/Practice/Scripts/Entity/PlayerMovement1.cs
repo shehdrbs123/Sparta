@@ -13,10 +13,12 @@ namespace Practice.Scripts.Entity
 
         private Vector2 _direction;
         private Rigidbody2D _rigid;
+        private Animator _ani;
         private void Awake()
         {
             _controller = GetComponent<TopDownCharacterController1>();
             _rigid = GetComponent<Rigidbody2D>();
+            _ani = GetComponentInChildren<Animator>();
         }
 
         private void Start()
@@ -34,6 +36,7 @@ namespace Practice.Scripts.Entity
         {
             _direction = direction;
             _rigid.velocity = direction * speed;
+            _ani.SetBool("IsMove",direction.magnitude>0);
         }
     }
 }
