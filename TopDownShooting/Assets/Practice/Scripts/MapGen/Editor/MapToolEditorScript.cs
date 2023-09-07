@@ -36,9 +36,7 @@ namespace Practice.Scripts.MapGen.Editor
             serializedObject.ApplyModifiedProperties();
             if(tmp != MapTheme.objectReferenceValue)
                 tool.UpdateTilePersents();
-            
             base.OnInspectorGUI();
-         
         }
     }
 }

@@ -31,7 +31,8 @@ namespace Practice.Scripts
 
         public void LookFor()
         {
-            Vector2 worldPos = _Camera.ScreenToWorldPoint(_mouseWorldPosition);
+            
+            Vector2 worldPos = GetCamera().ScreenToWorldPoint(_mouseWorldPosition);
             Vector2 direction = (worldPos - (Vector2)transform.position).normalized;
             if (direction.magnitude > .9f)
             {
@@ -42,6 +43,13 @@ namespace Practice.Scripts
         public void OnFire()
         {
             IsAttacking = true;
+        }
+
+        private Camera GetCamera()
+        {
+            if(!_Camera)
+                _Camera = Camera.main;
+            return _Camera;
         }
     }
 }

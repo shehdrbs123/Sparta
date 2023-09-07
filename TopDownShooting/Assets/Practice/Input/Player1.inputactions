@@ -112,6 +112,34 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "Console",
+            "id": "9659a4fb-604b-47dc-8d22-59857bad5712",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "74975922-5bd6-4ea4-8788-bccc91155056",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "cc102957-4bf4-4947-b1f7-a5429c424f09",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
@@ -130,6 +158,11 @@
                     "isOR": false
                 }
             ]
+        },
+        {
+            "name": "New control scheme",
+            "bindingGroup": "New control scheme",
+            "devices": []
         }
     ]
 }

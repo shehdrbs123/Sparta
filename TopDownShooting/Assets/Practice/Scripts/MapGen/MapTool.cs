@@ -9,6 +9,8 @@ public class MapTool : MonoBehaviour
 {
     [HideInInspector]
     [SerializeField]MapTheme MapTheme;
+    
+    
     [Header("바닥")] 
     private TilePersent[] _ground;
     private TilePersent[] _groundDeco;

@@ -9,12 +9,14 @@ public class PlayerShooting1 : MonoBehaviour
     [SerializeField] private Transform shootTransform;
     
     private TopDownCharacterController1 _controller1;
+    private Collider2D _cols;
 
     private float _rotZ=0;
     
     private void Awake()
     {
         _controller1 = GetComponent<TopDownCharacterController1>();
+        _cols = GetComponent<Collider2D>();
     }
 
     
@@ -32,6 +34,7 @@ public class PlayerShooting1 : MonoBehaviour
     private void Shooting()
     {
         GameObject obj = Instantiate(projectilePrefab, shootTransform.position, Quaternion.Euler(0,0,_rotZ));
+        Physics2D.IgnoreCollision(obj.GetComponent<Collider2D>(),_cols);
         Destroy(obj,10);
     }
 

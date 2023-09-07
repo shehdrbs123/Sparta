@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6385c9a01a730134d8cc8fe8e197b405, type: 3}
+  m_Name: Jungle
+  m_EditorClassIdentifier: 
+  _ground:
+  - {fileID: 11400000, guid: 727d704723959c948adb73b9c8a20c7d, type: 2}
+  - {fileID: 11400000, guid: 183c09476413bd54f8ab11c0549ce990, type: 2}
+  - {fileID: 11400000, guid: f267bacd0e7e7a14e968460e47ef6e2b, type: 2}
+  - {fileID: 11400000, guid: aec4e135549a697469dca6331e1e69e3, type: 2}
+  - {fileID: 11400000, guid: d72b4b7198aa0fb469b19fd82cb702dc, type: 2}
+  - {fileID: 11400000, guid: 193f9fe9d0697a843ae7625584a3baaf, type: 2}
+  - {fileID: 11400000, guid: 55ac4b13d72f0ca4fafaf0941e4dacc5, type: 2}
+  - {fileID: 11400000, guid: 2d14bae3c3685914f894eb043275137e, type: 2}
+  _groundPossibility: 0000000000000000000000000000000000000000000000000000000000000000
+  _groundDeco: []
+  _groundDecoPossibility: 
+  groundOrderInLayer: 0
+  _walls:
+  - {fileID: 11400000, guid: c93adfa77c0c16b48bd7277f1fdd972a, type: 2}
+  _wallsPossiability: 00000000
+  _wallGroundEdge: []
+  _wallGroundEdgePossibiliity: 
+  _wallDeco: []
+  _wallsDecoPossibility: 
+  _wallLeftCorners: []
+  _wallLeftCornersPossibility: 
+  _wallRightCorners: []
+  _wallRightCornersPossibility: 
+  _wallTopLeft: []
+  _wallTopLeftPossibility: 
+  _wallTopRight: []
+  _wallTopRightPossibility: 
+  _wallTopMiddle: []
+  _wallTopMiddlePossibility: 
+  _wallLeftSide: []
+  _wallLeftSidePossibility: 
+  _wallRightSide: []
+  _wallRightSidePossibility: 
+  _wallBottomTopLeftCorner: []
+  _wallBottomTopLeftCornerPossibility: 
+  _wallBottomTopRightCorner: []
+  _wallBottomTopRightCornerPossibility: 
+  _wallBottomLeft: []
+  _wallBottomLeftPossibility: 
+  _wallBottomRight: []
+  _wallBottomRightPossibility: 
+  _backDesignOrderInLayer: 3
+  _foreDesignOrderInLayer: 20
