@@ -2,4 +2,23 @@
 
 
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/RTNzJ8vCGZE" title="내일배움캠프 유니티 2D 프로젝트 개인과제 설명영상입니다." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[유튜브 동영상 링크](https://www.youtube.com/watch?v=RTNzJ8vCGZE)
+
+## 개요
+
+개발 환경 : c#, Unity 2022.3.8f1, Rider 2023.1.2 <br>
+개발 내용 
+- 맵 제작기 개발
+- 캐릭터 이동, 무기 방향
+- 캐릭터 애니메이션 구현
+- 투사체 발사 및 충돌처리 조정
+- 캐릭터 변경, 캐릭터 이름 변경
+- 카메라 세팅
+- 미니맵 구현
+
+
+
+
+
+
+
