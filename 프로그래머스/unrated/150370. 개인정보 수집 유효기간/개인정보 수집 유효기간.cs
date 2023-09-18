@@ -44,7 +44,7 @@ public class Solution {
             DayTime += termsNum*28 - 1;
         }else
         {
-            Console.WriteLine("없다고?");
+            //Console.WriteLine("없다고?");
         }
         
         
