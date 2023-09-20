@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Course/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Practice/Scenes/Main.unity
+    path: Assets/Scenes/Main.unity
     guid: 424ff09cddce61b408d94fd09873dc47
   - enabled: 1
-    path: Assets/Practice/Scenes/MapGenScene.unity
+    path: Assets/Scenes/MapGenScene.unity
     guid: df342396fd11fb94ca4560578756d012
   m_configObjects: {}

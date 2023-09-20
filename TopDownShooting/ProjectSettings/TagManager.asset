@@ -13,9 +13,9 @@ TagManager:
   - IgnoreProjectile
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Enemy
+  - Level
+  - Player
   - 
   - 
   - 

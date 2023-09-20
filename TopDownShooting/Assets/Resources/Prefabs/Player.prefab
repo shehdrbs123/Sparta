@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5088817740249118891}
   - component: {fileID: 6048843764014378236}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RangeSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 2002784483224374040}
   - component: {fileID: 1963409688956434505}
   - component: {fileID: 2004906873602531990}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 901933898487204644}
   - component: {fileID: 7165157829857121437}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MeleeSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8154684856403045103}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WeaponPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -318,7 +318,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7175309061758209809}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShootPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5884916669535668804}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MeleePivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -389,7 +389,8 @@ GameObject:
   - component: {fileID: 2707601859903529452}
   - component: {fileID: 1239010766132410903}
   - component: {fileID: 1419985284320111948}
-  m_Layer: 0
+  - component: {fileID: 2060589343575754715}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -500,7 +501,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0acc75998f541c3929235e7aca8a640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
 --- !u!114 &2707601859903529452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -587,6 +587,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 0.7}
   m_EdgeRadius: 0
+--- !u!114 &2060589343575754715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7529951656685448298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 074e759ccf34ac14a9e89630c26d0f35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseStats:
+    statsChangeType: 2
+    maxHealth: 10
+    speed: 5
+    attackSO: {fileID: 11400000, guid: 038c9d2d9ac63bb47810584b121634c9, type: 2}
+  statsModifiers: []
 --- !u!1 &8972958802563391136
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,7 +616,7 @@ GameObject:
   - component: {fileID: 4601197969455821553}
   - component: {fileID: 50187122102498819}
   - component: {fileID: 1976524794481545586}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: NameTag
   m_TagString: Untagged
   m_Icon: {fileID: 0}

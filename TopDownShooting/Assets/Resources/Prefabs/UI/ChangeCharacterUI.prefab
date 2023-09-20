@@ -648,6 +648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830c540b819f5d74c84d6557cf0c8960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isIgnoreInput: 1
   Jobs:
   - {fileID: 11400000, guid: fc0c8d6528e72ce4a94c76349849ac06, type: 2}
   - {fileID: 11400000, guid: 8cc45bb899c27b24da40414057a25eaa, type: 2}

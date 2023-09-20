@@ -691,6 +691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f84ca953b5be486bab63ac90c5b5344b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isIgnoreInput: 1
   textField: {fileID: 1101067381736310740}
   Button: {fileID: 7858295051833865039}
 --- !u!1 &8885435807234473299
