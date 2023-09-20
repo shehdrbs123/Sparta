@@ -23,10 +23,7 @@ public class TopUI : BaseUI
         InventoryUI.onClick.AddListener(OnClickShowInventoryUI);
     }
 
-    private void OnClickShowInventoryUI()
-    {
-        
-    }
+    
 
     private void Start()
     {
@@ -54,5 +51,14 @@ public class TopUI : BaseUI
         
         if(ynUI)
             ynUI.ShowYesOrNoUI("이것을 하시겠습니까",()=> Debug.Log("Yes"),()=>Debug.Log("No"));
+    }
+    
+    private void OnClickShowInventoryUI()
+    {
+        GameObject obj = _uiManager.GetUI("ConfirmUI");
+        ConfirmUI cui = obj.GetComponent<ConfirmUI>();
+        
+        if(cui)
+            cui.ShowConfirmUI("테스트");
     }
 }
