@@ -44,26 +44,23 @@ public class YesOrNoUI : BaseUI
     private void YesAction()
     {
         yesAction?.Invoke();
-        if (AddtionalPanel)
-        {
-            Destroy(AddtionalPanel);
-            AddtionalPanel = null;            
-        }
-
-        yesAction -= yesAction;
-        TextPanel.SetActive(false);
-        gameObject.SetActive(false);
+        ResetPanel();
     }
 
     private void NoAction()
     {
         noAction?.Invoke();
+        ResetPanel();
+    }
+
+    private void ResetPanel()
+    {
         if (AddtionalPanel)
         {
             Destroy(AddtionalPanel);
             AddtionalPanel = null;            
         }
-
+        yesAction -= yesAction;
         noAction -= noAction;
         TextPanel.SetActive(false);
         gameObject.SetActive(false);

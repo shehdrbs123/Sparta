@@ -7,15 +7,15 @@ using UnityEngine.InputSystem;
 
 public class UIManager : MonoBehaviour
 {
-    private ObjectPool<GameObject> pool;
+    private GameObjectPool pool;
     private bool IsInputIgnore=false;
     private HashSet<GameObject> enableSet;
     private List<InputAction> needIgnore;
     private void Awake()
     {
-        pool = new ObjectPool<GameObject>();
-        Dictionary<string, GameObject> Prefabs = ClassGetter.GetResourcePrefabs<GameObject>("Prefabs/UI");
-        pool.SetOriginalObjects(Prefabs);
+        pool = new GameObjectPool();
+        var Prefabs = ClassGetter.GetResourcePrefabs<GameObject>("Prefabs/UI");
+        pool.Init(Prefabs);
         enableSet = new HashSet<GameObject>();
         needIgnore = new List<InputAction>();
     }

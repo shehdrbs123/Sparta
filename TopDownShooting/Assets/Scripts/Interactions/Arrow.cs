@@ -15,7 +15,7 @@ public class Arrow : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
         rigid.velocity = transform.right * arrowSpeed;
     }
