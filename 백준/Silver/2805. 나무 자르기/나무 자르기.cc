@@ -10,23 +10,23 @@ int main()
     ios::sync_with_stdio(0);
     cin.tie(NULL);
     
-    long long woodCount{}, needWoods{};
-    long long cutHeight{};
-    vector<long long> woods{};
+    int woodCount{}, needWoods{};
+    int cutHeight{};
+    vector<int> woods{};
     
     cin >> woodCount >> needWoods;
     
     woods.reserve(woodCount);
-    for(long long i=0;i<woodCount;++i)
+    for(int i=0;i<woodCount;++i)
     {
-        long long height;
+        int height;
         cin >> height;
         woods.emplace_back(height);
     }
     
-    sort(woods.begin(),woods.end(),greater<long long>());
+    sort(woods.begin(),woods.end(),greater<int>());
     cutHeight = woods[0];
-    for(long long i=1;i<woods.size();++i)
+    for(int i=1;i<woods.size();++i)
     {
         needWoods -= (woods[i-1]-woods[i])*i;
         cutHeight = woods[i];
@@ -42,6 +42,6 @@ int main()
     }
 
     float restHeightf = (float)needWoods / woods.size();
-    long long restHeight = ceil(restHeightf);
+    int restHeight = ceil(restHeightf);
     cout << cutHeight - restHeight;
 }
