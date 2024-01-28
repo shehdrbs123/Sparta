@@ -1,57 +1,19 @@
-#include <iostream>
-#include <vector>
-#include <queue>
-using namespace std;
+// 3위 분꺼 Test
+#include <cstdio>
 
-bool visited[1001];
+short par[1001];
+short Find(int x) { return x == par[x] ? x : par[x] = Find(par[x]); }
+bool Union(int a, int b) { a = Find(a), b = Find(b), par[b] = a; return a != b; }
 
-
-int main()
-{
-    ios::sync_with_stdio(0);
-    cin.tie(NULL);
+int main() {
+	auto readInt = [&]() {
+		int ret = 0;
+        for (char c = getchar(); c & 16; ret = 10 * ret + (c & 15), c = getchar());
+		return ret;
+	};
     
-    vector<vector<int>> vertexes{};    
-    queue<int> q{};
-    int vertex{}, edges{};
-    int count{};
-    
-    cin >> vertex >> edges;
-    
-    vertexes.resize(vertex+1);
-    
-    for(int i=0;i<edges;++i)
-    {
-        int vertex1{}, vertex2{};
-        cin >> vertex1 >> vertex2;
-        vertexes[vertex1].emplace_back(vertex2);
-        vertexes[vertex2].emplace_back(vertex1);
-    }
-
-    
-    for(int i=1;i<=vertex;++i)
-    {
-        if(visited[i])
-           continue;
-        
-        q.emplace(i);
-        visited[i] = true;
-        
-        while(!q.empty())
-        {
-            int pos = q.front(); q.pop();
-            int size = vertexes[pos].size();
-            for(int j=0; j<size;++j)
-            {
-                int next = vertexes[pos][j];
-                if(visited[next]) continue;
-                
-                q.emplace(next);
-                visited[next] = true;
-            }
-        }
-
-        count++;
-    }
-    cout << count;
+	int n = readInt(), m = readInt(), cnt = n;
+    for (int i = 0; i <= 1000; i++) par[i] = i;
+    for (; m-- && cnt > 1; cnt -= Union(readInt(), readInt()));
+    printf("%d\n", cnt);
 }
