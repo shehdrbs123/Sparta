@@ -28,11 +28,11 @@ int main()
         ++treeCount;
     }
     
+    cout << fixed;
+    cout.precision(4);
     for(auto a : m)
     {
         cout << a.first << " ";
-        cout << fixed;
-        cout.precision(4);
         cout << a.second/(float)treeCount* 100<< '\n';
     }
     
