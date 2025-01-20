@@ -1,35 +1,34 @@
 #include <iostream>
-#include <cmath>
+
 using namespace std;
 
-bool isPrime(int number)
-{
-    float sqrtV = sqrt(number);
-    if(number <= 1) return false;
-
-    for(int i=2;i<=sqrtV;++i)
-    {
-        if(number%i == 0) { return false; }
-    }
-    return true;
-}
+bool isNotPrime[1001];
 int main()
 {
     ios::sync_with_stdio(0);
     cin.tie(0);
-    
+    isNotPrime[1] = true;
+    for(int i=2;i<=1000;++i)
+    {
+        int duple = 1000/i;
+        for(int j=2;j<=duple;j++)
+        {
+            isNotPrime[i*j] = true;
+        }
+    }
+
     int count;
     int number;
-    int result=0;
+    int result = 0;
     cin >> count;
-    
+
     for(int i=0;i<count;++i)
     {
         cin >> number;
-        if(isPrime(number))
-        {
+        if(!isNotPrime[number])
             result += 1;
-        }
     }
+
     cout << result;
+
 }
